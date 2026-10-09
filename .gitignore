@@ -1,0 +1,7 @@
+out/
+output/
+log/
+.vs/
+config/environment.ini
+config/settings.ini
+
