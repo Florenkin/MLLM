@@ -1,0 +1,11 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {"name":"base","hidden":true,"generator":"Ninja","environment":{"VSLANG":"1033"},"cacheVariables":{"BUILD_TESTING":"ON"}},
+    {"name":"release","inherits":"base","binaryDir":"${sourceDir}/out/build/release","cacheVariables":{"CMAKE_BUILD_TYPE":"Release","CMAKE_INSTALL_PREFIX":"${sourceDir}/out/package/MLLM"}},
+    {"name":"debug","inherits":"base","binaryDir":"${sourceDir}/out/build/debug","cacheVariables":{"CMAKE_BUILD_TYPE":"Debug"}}
+  ],
+  "buildPresets":[{"name":"release","configurePreset":"release","jobs":8},{"name":"debug","configurePreset":"debug","jobs":8}],
+  "testPresets":[{"name":"release","configurePreset":"release","output":{"outputOnFailure":true}},{"name":"debug","configurePreset":"debug","output":{"outputOnFailure":true}}]
+}
+
